@@ -20,6 +20,7 @@ server.post('/api/messages', connector.listen());
 var bot = new builder.UniversalBot(connector, [
     // Headache Test
     function (session, results) {
+
         if (results == 'headache') {
             session.send('You should be a headache');
         } else if (results == 'stomachache in right down') {

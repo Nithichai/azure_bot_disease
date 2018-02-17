@@ -1,0 +1,28 @@
+{
+  "name": "azure_bot_disease",
+  "version": "1.0.0",
+  "main": "bot_basic.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nithichai/azure_bot_disease.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nithichai/azure_bot_disease/issues"
+  },
+  "homepage": "https://github.com/Nithichai/azure_bot_disease#readme",
+  "dependencies": {
+    "async": "^2.6.0",
+    "mysql": "^2.15.0",
+    "mysql2": "^1.5.2",
+    "pg": "^7.4.1",
+    "tedious": "^2.5.0"
+  },
+  "devDependencies": {},
+  "description": ""
+}
