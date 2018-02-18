@@ -40,15 +40,20 @@ var bot = new builder.UniversalBot(connector, function (session) {
 
     var luisRequest = endpoint + luisAppId + '?' + querystring.stringify(queryParams);
     request(luisRequest, function (err, response, body) {
+        var is_found = false;
         if (err)
             console.log(err);
         else { 
             var data = JSON.parse(body);
-            if (data.topScoringIntent.intent < 0.5) {
-                session.send(`You must more specific the symptom`);
-            } else {
-                session.send(`You should be ${data.topScoringIntent.intent}`);
+            for(var i = 0; i < data.intents.length; i++) {
+                if (data.intents[i].score > 0.5) {
+                    is_found = true;
+                    session.send(`You should be ${data.intents[i].intent}`);
+                }
             }
+        }
+        if (!is_found) {
+            session.send(`You should more specify the symptoms`);
         }
     });
 });
